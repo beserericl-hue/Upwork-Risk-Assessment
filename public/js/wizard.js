@@ -9,6 +9,7 @@ class RiskAssessmentWizard {
         this.currentCategoryIndex = 0;
         this.answers = {};
         this.email = '';
+        this.clientId = '';
 
         // Initialize
         this.init();
@@ -16,7 +17,7 @@ class RiskAssessmentWizard {
 
     async init() {
         await this.loadConfig();
-        this.parseEmailFromUrl();
+        this.parseUrlParams();
         this.initializeAnswers();
         this.renderProgressSteps();
         this.bindEvents();
@@ -35,9 +36,10 @@ class RiskAssessmentWizard {
         }
     }
 
-    parseEmailFromUrl() {
+    parseUrlParams() {
         const params = new URLSearchParams(window.location.search);
         this.email = params.get('email') || '';
+        this.clientId = params.get('ClientID') || '';
 
         const emailDisplay = document.getElementById('userEmail');
         if (this.email) {
@@ -420,6 +422,7 @@ class RiskAssessmentWizard {
         // Build payload
         const payload = {
             email: this.email,
+            clientId: this.clientId,
             timestamp: new Date().toISOString(),
             answers: answersWithText,
             categoryScores: {},
