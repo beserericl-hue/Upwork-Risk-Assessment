@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fulfillment Risk Assessment | Valley Distribution & Logistics</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">VALLEY DISTRIBUTION & LOGISTICS</span>
+                    <span class="logo-sub">VALLEYDL.COM</span>
+                </div>
+            </div>
+            <div class="user-email" id="userEmail"></div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-steps" id="progressSteps"></div>
+        </div>
+
+        <!-- Wizard Content -->
+        <main class="wizard-content">
+            <!-- Welcome Page -->
+            <div class="wizard-page active" id="page-welcome">
+                <div class="welcome-hero">
+                    <img src="/images/welcome-cover.png" alt="Fulfillment Risk Assessment" class="welcome-hero-image">
+                    <div class="welcome-hero-overlay">
+                        <h1>FULFILLMENT<br>RISK ASSESSMENT</h1>
+                        <p class="welcome-tagline">A practical diagnostic to identify<br>hidden fulfillment risks</p>
+                        <p class="welcome-audience">For brands scaling fulfillment<br>without sacrificing margins</p>
+                    </div>
+                </div>
+                <div class="welcome-content">
+                    <div class="welcome-intro">
+                        <h2>Let's Begin!</h2>
+                        <p>The purpose of this assessment is to provide directional clarity around issues that may already feel familiar. Most fulfillment problems don't appear as obvious failures; they surface gradually through margin erosion, chargebacks, strained buyer relationships, and ongoing operational friction.</p>
+                        <p>This assessment applies to brands selling direct-to-consumer, wholesale, or through national retail partners. Several of the risks below tend to intensify once retail compliance, routing guides, EDI requirements, and chargebacks enter the picture.</p>
+                        <p class="highlight-text">If you cannot confidently answer YES to a question, mark it as a risk.</p>
+                        <p>This assessment is intentionally brief. Its goal is not to diagnose every issue, but to help surface where to focus attention and which questions are worth asking next.</p>
+                    </div>
+                    <div class="assessment-overview">
+                        <div class="overview-item">
+                            <span class="overview-number">30</span>
+                            <span class="overview-label">Questions</span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-number">6</span>
+                            <span class="overview-label">Categories</span>
+                        </div>
+                        <div class="overview-item">
+                            <span class="overview-number">~10</span>
+                            <span class="overview-label">Minutes</span>
+                        </div>
+                    </div>
+                    <div class="scoring-guide">
+                        <h3>Scoring Guide</h3>
+                        <div class="score-options-preview">
+                            <div class="score-preview"><span class="score-badge score-0">0</span> Not an issue / N/A</div>
+                            <div class="score-preview"><span class="score-badge score-1">1</span> Minor issue</div>
+                            <div class="score-preview"><span class="score-badge score-2">2</span> Moderate issue</div>
+                            <div class="score-preview"><span class="score-badge score-3">3</span> Severe issue</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Pages (will be populated by JS) -->
+            <div class="wizard-page" id="page-category"></div>
+
+            <!-- Review Page -->
+            <div class="wizard-page" id="page-review">
+                <div class="review-content">
+                    <h2>Review Your Responses</h2>
+                    <p class="review-description">Please review your answers before submitting. Click on any category to make changes.</p>
+                    <div class="review-categories" id="reviewCategories"></div>
+                </div>
+            </div>
+
+            <!-- Submitting Page -->
+            <div class="wizard-page" id="page-submitting">
+                <div class="submitting-content">
+                    <div class="spinner"></div>
+                    <h2>Processing Your Assessment</h2>
+                    <p>Please wait while we analyze your responses...</p>
+                </div>
+            </div>
+
+            <!-- Complete Page -->
+            <div class="wizard-page" id="page-complete">
+                <div class="complete-content">
+                    <div class="complete-header">
+                        <h2>Thank You!</h2>
+                        <p>Thanks for taking the time to work through this assessment. Most operators never pause long enough to step back and evaluate fulfillment risk this way.</p>
+                        <p>What this assessment is designed to do is provide directional clarity—not a score, and not a diagnosis. Fulfillment issues rarely exist in isolation. They tend to compound across inventory, execution, systems, partners, and customer experience.</p>
+                        <p>If several sections stood out, that's common. In practice, brands often experience multiple small breakdowns long before a single obvious failure appears.</p>
+                    </div>
+                    <div class="complete-summary" id="completeSummary"></div>
+                    <div class="complete-cta">
+                        <h3>How We Can Help</h3>
+                        <p>We work with e-commerce and retail brands to identify where fulfillment risk is actually coming from, what matters most to address first, and what can safely wait.</p>
+                        <p>A short fulfillment risk review is typically used to:</p>
+                        <ul>
+                            <li>Validate whether issues are isolated or systemic</li>
+                            <li>Separate signal from noise</li>
+                            <li>Identify the few changes that have the biggest impact on performance</li>
+                        </ul>
+                        <p class="cta-note">This is not a sales call. It's a working conversation focused on clarity.</p>
+                        <div class="cta-buttons">
+                            <a href="mailto:Jfick@valleydl.com" class="btn btn-primary">Email: Jfick@valleydl.com</a>
+                            <a href="#" class="btn btn-success">Schedule a Fulfillment Risk Review</a>
+                        </div>
+                        <p class="cta-footer">If now isn't the right time, you'll also receive follow-up insights by email that expand on the themes in this assessment.</p>
+                        <div class="signature">
+                            <p>Warm Regards,</p>
+                            <p class="signature-name">Lance Perkins</p>
+                            <p class="signature-website">WWW.VALLEYDL.COM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Navigation -->
+        <nav class="wizard-nav">
+            <button class="btn btn-secondary" id="btnPrev" disabled>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15L7 10L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Previous
+            </button>
+            <button class="btn btn-primary" id="btnNext">
+                Let's Begin
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5L13 10L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <script src="/js/questions.js"></script>
+    <script src="/js/wizard.js"></script>
+</body>
+</html>
