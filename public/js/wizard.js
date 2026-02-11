@@ -10,6 +10,9 @@ class RiskAssessmentWizard {
         this.answers = {};
         this.email = '';
         this.clientId = '';
+        this.ordersPerMonth = null;
+        this.aov = null;
+        this.shippingSpend = null;
 
         // Initialize
         this.init();
@@ -95,6 +98,7 @@ class RiskAssessmentWizard {
         }
 
         this.updateUI();
+        window.scrollTo(0, 0);
     }
 
     getStepsList() {
@@ -125,6 +129,34 @@ class RiskAssessmentWizard {
         document.getElementById('btnNext').addEventListener('click', () => this.handleNext());
     }
 
+    validateBusinessInputs() {
+        let valid = true;
+        const ordersInput = document.getElementById('orders_per_month');
+        const aovInput = document.getElementById('aov');
+
+        ordersInput.classList.remove('input-error');
+        aovInput.classList.remove('input-error');
+
+        if (!ordersInput.value || Number(ordersInput.value) <= 0) {
+            ordersInput.classList.add('input-error');
+            ordersInput.focus();
+            valid = false;
+        }
+        if (!aovInput.value || Number(aovInput.value) <= 0) {
+            aovInput.classList.add('input-error');
+            if (valid) aovInput.focus();
+            valid = false;
+        }
+        return valid;
+    }
+
+    captureBusinessInputs() {
+        this.ordersPerMonth = Number(document.getElementById('orders_per_month').value);
+        this.aov = Number(document.getElementById('aov').value);
+        const spendInput = document.getElementById('shipping_spend').value;
+        this.shippingSpend = spendInput ? Number(spendInput) : this.ordersPerMonth * 6;
+    }
+
     handlePrev() {
         if (this.currentPage === 'category' && this.currentCategoryIndex > 0) {
             this.currentCategoryIndex--;
@@ -135,10 +167,13 @@ class RiskAssessmentWizard {
             this.currentCategoryIndex = ASSESSMENT_CATEGORIES.length - 1;
         }
         this.updateUI();
+        window.scrollTo(0, 0);
     }
 
     handleNext() {
         if (this.currentPage === 'welcome') {
+            if (!this.validateBusinessInputs()) return;
+            this.captureBusinessInputs();
             this.currentPage = 'category';
             this.currentCategoryIndex = 0;
         } else if (this.currentPage === 'category') {
@@ -151,6 +186,7 @@ class RiskAssessmentWizard {
             this.submitAssessment();
         }
         this.updateUI();
+        window.scrollTo(0, 0);
     }
 
     updateUI() {
@@ -284,9 +320,6 @@ class RiskAssessmentWizard {
             </div>
             <div class="questions-list">
                 ${category.questions.map((question, qIndex) => this.renderQuestion(question, qIndex)).join('')}
-            </div>
-            <div class="category-footer">
-                <p>${category.footerNote}</p>
             </div>
         `;
 
@@ -424,6 +457,9 @@ class RiskAssessmentWizard {
             email: this.email,
             clientId: this.clientId,
             timestamp: new Date().toISOString(),
+            ordersPerMonth: this.ordersPerMonth,
+            aov: this.aov,
+            shippingSpend: this.shippingSpend,
             answers: answersWithText,
             categoryScores: {},
             totalScore: this.getTotalScore(),

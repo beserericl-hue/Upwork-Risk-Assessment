@@ -47,9 +47,30 @@
                         <h2>Let's Begin!</h2>
                         <p>The purpose of this assessment is to provide directional clarity around issues that may already feel familiar. Most fulfillment problems don't appear as obvious failures; they surface gradually through margin erosion, chargebacks, strained buyer relationships, and ongoing operational friction.</p>
                         <p>This assessment applies to brands selling direct-to-consumer, wholesale, or through national retail partners. Several of the risks below tend to intensify once retail compliance, routing guides, EDI requirements, and chargebacks enter the picture.</p>
-                        <p class="highlight-text">If you cannot confidently answer YES to a question, mark it as a risk.</p>
                         <p>This assessment is intentionally brief. Its goal is not to diagnose every issue, but to help surface where to focus attention and which questions are worth asking next.</p>
                     </div>
+                    <div class="business-inputs">
+                        <h3>About Your Business</h3>
+                        <div class="input-group">
+                            <label for="orders_per_month">How many orders do you ship per month? <span class="required">*</span></label>
+                            <input type="number" id="orders_per_month" name="orders_per_month" min="0" step="1" placeholder="e.g. 5000" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="aov">What is your average order value (AOV)? <span class="required">*</span></label>
+                            <div class="input-with-prefix">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="aov" name="aov" min="0" step="0.01" placeholder="e.g. 45.00" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="shipping_spend">What is your estimated monthly shipping spend?</label>
+                            <div class="input-with-prefix">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="shipping_spend" name="shipping_spend" min="0" step="0.01" placeholder="Optional — estimated if left blank">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="assessment-overview">
                         <div class="overview-item">
                             <span class="overview-number">30</span>
@@ -82,9 +103,22 @@
             <!-- Review Page -->
             <div class="wizard-page" id="page-review">
                 <div class="review-content">
-                    <h2>Review Your Responses</h2>
-                    <p class="review-description">Please review your answers before submitting. Click on any category to make changes.</p>
+                    <h2>Thank You</h2>
+                    <p class="review-description">Thank you for completing the Fulfillment Risk Assessment. Most operators rarely pause long enough to evaluate fulfillment risk from end to end, so taking this step already puts you ahead.</p>
+                    <p class="review-description">The overview below is just a quick snapshot of your results. Your full report—including deeper analysis, margin-impact estimates, and prioritized recommendations—has already been generated and will arrive in your inbox shortly.</p>
+                    <p class="review-description">Fulfillment issues almost never stem from one place. They tend to compound across inventory, accuracy, systems, and the customer experience. If several areas stand out, that's typical. Even small gaps in multiple categories can create meaningful leakage long before a major failure becomes obvious.</p>
+                    <h3>Your Snapshot Results</h3>
                     <div class="review-categories" id="reviewCategories"></div>
+                    <div class="review-report-info">
+                        <h3>What Your Full Report Includes</h3>
+                        <ul>
+                            <li>A deeper breakdown of each category</li>
+                            <li>Key drivers contributing to your score</li>
+                            <li>Potential margin leakage tied to your inputs</li>
+                            <li>The few next steps that will move performance the fastest</li>
+                        </ul>
+                        <p>You don't need to do anything else—the PDF will be in your inbox shortly.</p>
+                    </div>
                 </div>
             </div>
 
@@ -101,27 +135,27 @@
             <div class="wizard-page" id="page-complete">
                 <div class="complete-content">
                     <div class="complete-header">
-                        <h2>Thank You!</h2>
-                        <p>Thanks for taking the time to work through this assessment. Most operators never pause long enough to step back and evaluate fulfillment risk this way.</p>
-                        <p>What this assessment is designed to do is provide directional clarity—not a score, and not a diagnosis. Fulfillment issues rarely exist in isolation. They tend to compound across inventory, execution, systems, partners, and customer experience.</p>
-                        <p>If several sections stood out, that's common. In practice, brands often experience multiple small breakdowns long before a single obvious failure appears.</p>
+                        <h2>Thank You</h2>
+                        <p>Thank you for completing the Fulfillment Risk Assessment. Most operators rarely pause long enough to evaluate fulfillment risk from end to end, so taking this step already puts you ahead.</p>
+                        <p>The overview below is just a quick snapshot of your results. Your full report—including deeper analysis, margin-impact estimates, and prioritized recommendations—has already been generated and will arrive in your inbox shortly.</p>
+                        <p>Fulfillment issues almost never stem from one place. They tend to compound across inventory, accuracy, systems, and the customer experience. If several areas stand out, that's typical. Even small gaps in multiple categories can create meaningful leakage long before a major failure becomes obvious.</p>
                     </div>
                     <div class="complete-summary" id="completeSummary"></div>
                     <div class="complete-cta">
                         <h3>How We Can Help</h3>
-                        <p>We work with e-commerce and retail brands to identify where fulfillment risk is actually coming from, what matters most to address first, and what can safely wait.</p>
-                        <p>A short fulfillment risk review is typically used to:</p>
+                        <p>We help e-commerce and retail brands identify where fulfillment risk is actually coming from, what deserves attention first, and what can safely wait.</p>
+                        <p>A short fulfillment risk review is often used to:</p>
                         <ul>
                             <li>Validate whether issues are isolated or systemic</li>
                             <li>Separate signal from noise</li>
-                            <li>Identify the few changes that have the biggest impact on performance</li>
+                            <li>Pinpoint the few operational changes with the highest impact</li>
                         </ul>
-                        <p class="cta-note">This is not a sales call. It's a working conversation focused on clarity.</p>
+                        <p>This is not a sales call—it's a working conversation focused on clarity.</p>
+                        <p>If you'd like help interpreting your report or want a deeper review of your current operations, you can schedule a Fulfillment Risk Review below.</p>
                         <div class="cta-buttons">
                             <a href="mailto:Jfick@valleydl.com" class="btn btn-primary">Email: Jfick@valleydl.com</a>
                             <a href="#" class="btn btn-success">Schedule a Fulfillment Risk Review</a>
                         </div>
-                        <p class="cta-footer">If now isn't the right time, you'll also receive follow-up insights by email that expand on the themes in this assessment.</p>
                         <div class="signature">
                             <p>Warm Regards,</p>
                             <p class="signature-name">Lance Perkins</p>
